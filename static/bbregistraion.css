@@ -1,0 +1,106 @@
+/* Basic Styling */
+body {
+    font-family: 'Jura', sans-serif;
+    background: linear-gradient(to bottom, #C26060, #6F2D2D);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    appearance: none; /* Removes the default dropdown arrow for a more consistent look */
+}
+
+select option {
+    background-color: #8c2d2d; /* Color of dropdown options */
+    color: #fff;
+}
+.title {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust spacing between checkboxes */
+}
+
+.checkbox-group label {
+    margin-right: 10px; /* Optional: Adjusts spacing between label and checkbox */
+}
+
+
+h2 {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #8c2d2d;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #8c2d2d;
+    color: #fff;
+}

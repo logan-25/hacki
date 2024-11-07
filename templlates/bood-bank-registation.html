@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Details Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap">
+    <link rel="stylesheet" href="/static/bbregistraion.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Blood Bank Registration Form</h1>
+        <form action="submit_registration" method="post" enctype="multipart/form-data">
+            
+            <!-- General Information Section -->
+            <div class="section">
+                <h2>Blood Bank Information</h2>
+                <label for="bloodBankName">Blood Bank Name</label>
+                <select id="bloodBankName" name="bloodBankName" required>
+                    <option value="">Select Blood Bank</option>
+                    <option value="bb1">City Blood Bank</option>
+                    <option value="bb2">Red Cross Blood Center</option>
+                    <option value="bb3">Life Care Blood Bank</option>
+                </select>
+
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="district">District</label>
+                <input type="text" id="district" name="district" required>
+
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" name="pincode" required>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="section">
+                <h2>Contact Information</h2>
+                <label for="contactNo">Contact Number</label>
+                <input type="tel" id="contactNo" name="contactNo" required>
+
+                <label for="mobile">Mobile</label>
+                <input type="tel" id="mobile" name="mobile">
+
+                <label for="helpline">Helpline</label>
+                <input type="tel" id="helpline" name="helpline">
+
+                <label for="fax">Fax</label>
+                <input type="text" id="fax" name="fax">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="website">Website</label>
+                <input type="url" id="website" name="website">
+            </div>
+
+            <!-- Nodal Officer Section -->
+            <div class="section">
+                <h2>Nodal Officer Information</h2>
+                <label for="nodalOfficer">Nodal Officer Name</label>
+                <input type="text" id="nodalOfficer" name="nodalOfficer" required>
+
+                <label for="nodalContact">Contact Number</label>
+                <input type="tel" id="nodalContact" name="nodalContact">
+
+                <label for="nodalMobile">Mobile Number</label>
+                <input type="tel" id="nodalMobile" name="nodalMobile">
+
+                <label for="nodalEmail">Email</label>
+                <input type="email" id="nodalEmail" name="nodalEmail">
+
+                <label for="qualification">Qualification</label>
+                <input type="text" id="qualification" name="qualification">
+            </div>
+
+            <!-- License Section -->
+            <div class="section">
+                <h2>License and Service Details</h2>
+                <label for="category">Category</label>
+                <input type="text" id="category" name="category">
+
+                <label for="bloodComponentAvailable">Blood Component Available</label>
+                <input type="text" id="bloodComponentAvailable" name="bloodComponentAvailable">
+
+                <label for="apheresis">Apheresis</label>
+                <input type="text" id="apheresis" name="apheresis">
+
+                <label for="serviceTime">Service Time</label>
+                <input type="text" id="serviceTime" name="serviceTime">
+
+                <label for="licenseNumber">License Number</label>
+                <input type="text" id="licenseNumber" name="licenseNumber" required>
+
+                <label for="licenseDate">Date License Obtained</label>
+                <input type="date" id="licenseDate" name="licenseDate" required>
+
+                <label for="renewalDate">Date of Renewal</label>
+                <input type="date" id="renewalDate" name="renewalDate">
+            </div>
+
+            <!-- Verification Documents Section -->
+            <div class="section">
+                <h2>Verification Documents</h2>
+                <label for="id_proof">Government-Issued ID Proof</label>
+                <input type="file" id="id_proof" name="id_proof" accept=".pdf,.jpg,.png" required>
+                <br><br>
+
+                <label for="license">Upload License Certificate</label>
+                <input type="file" id="license" name="license" accept=".pdf,.jpg,.png" required>
+                <br><br>
+
+                <label for="approval">Approval Document (if applicable)</label>
+                <input type="file" id="approval" name="approval" accept=".pdf,.jpg,.png">
+            </div>
+
+            <!-- Inventory Management Section -->
+            <div class="section">
+                <h2>Inventory Management</h2>
+                <label>Blood Types Available</label>
+                <div class="section">
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="blood_type" value="A+" id="a_pos">
+                        <label for="a_pos">A+</label>
+                        <input type="checkbox" name="blood_type" value="A-" id="a_neg">
+                        <label for="a_neg">A-</label>
+                        <input type="checkbox" name="blood_type" value="B+" id="b_pos">
+                        <label for="b_pos">B+</label>
+                        <input type="checkbox" name="blood_type" value="B-" id="b_neg">
+                        <label for="b_neg">B-</label>
+                        <input type="checkbox" name="blood_type" value="AB+" id="ab_pos">
+                        <label for="ab_pos">AB+</label>
+                        <input type="checkbox" name="blood_type" value="AB-" id="ab_neg">
+                        <label for="ab_neg">AB-</label>
+                        <input type="checkbox" name="blood_type" value="O+" id="o_pos">
+                        <label for="o_pos">O+</label>
+                        <input type="checkbox" name="blood_type" value="O-" id="o_neg">
+                        <label for="o_neg">O-</label>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Registration</button>
+        </form>
+    </div>
+    <script>
+        // Fetch JSON data and populate dropdown
+        fetch('/excel/bloodbanknames.json')
+            .then(response => response.json())
+            .then(data => {
+                const bloodBankSelect = document.getElementById('bloodBankName');
+                // Access "Sheet1" array from JSON and get the names with the exact key
+                data.Sheet1.forEach(bloodBank => {
+                    const option = document.createElement('option');
+                    option.value = bloodBank[" Blood Bank Name"].trim();  // Trim any excess whitespace
+                    option.textContent = bloodBank[" Blood Bank Name"].trim();
+                    bloodBankSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error loading blood banks:', error));
+    </script>
+    
+</body>
+</html>
